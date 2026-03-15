@@ -90,7 +90,7 @@ function LearnSection() {
 
 function ProgramSection() {
   const { t } = useLang();
-  const modules = ["mod1", "mod2", "mod3", "mod4", "mod5", "mod6"] as const;
+  const modules = ["mod1", "mod2", "mod3", "mod4", "mod5", "mod6", "mod7", "mod8"] as const;
   return (
     <section id="programme" className="py-20 bg-secondary px-6">
       <div className="max-w-3xl mx-auto">
@@ -102,9 +102,6 @@ function ProgramSection() {
               <span className="text-foreground font-medium">{t(m)}</span>
             </div>
           ))}
-        </div>
-        <div className="text-center mt-10">
-          <Button variant="outline" size="lg">{t("ctaProgram")}</Button>
         </div>
       </div>
     </section>
