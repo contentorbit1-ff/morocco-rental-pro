@@ -158,7 +158,7 @@ function PricingSection() {
             1500 <span className="text-2xl font-medium text-pricing-muted">MAD</span>
           </div>
           <p className="text-pricing-muted mb-10">{t("priceSub")}</p>
-          <Button variant="pricing" size="xl">{t("ctaBuy")}</Button>
+          <Link to="/checkout"><Button variant="pricing" size="xl">{t("ctaBuy")}</Button></Link>
           <div className="mt-10 flex flex-wrap justify-center gap-8 text-pricing-muted">
             <span className="text-sm">{t("paymentLabel")}</span>
             <span className="font-bold">CMI</span>
