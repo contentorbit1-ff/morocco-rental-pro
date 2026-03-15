@@ -197,7 +197,7 @@ function FinalCTA() {
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-4 text-foreground">{t("finalCtaTitle")}</h2>
         <p className="text-muted-foreground mb-10">{t("finalCtaSub")}</p>
-        <Button variant="hero" size="xl">{t("finalCtaBtn")}</Button>
+        <Link to="/checkout"><Button variant="hero" size="xl">{t("finalCtaBtn")}</Button></Link>
       </div>
     </section>
   );
