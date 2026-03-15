@@ -1,6 +1,7 @@
 import { useLang } from "@/lib/LangContext";
 import { Button } from "@/components/ui/button";
 import { Home, Clock, TrendingUp, CheckCircle2, MessageCircle, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/morocco-hero.jpg";
 
 function HeroSection() {
@@ -15,7 +16,7 @@ function HeroSection() {
           {t("heroSub")}
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button variant="hero" size="lg">{t("ctaJoin")}</Button>
+          <Link to="/checkout"><Button variant="hero" size="lg">{t("ctaJoin")}</Button></Link>
           <a
             href="https://wa.me/212600000000"
             target="_blank"
@@ -157,7 +158,7 @@ function PricingSection() {
             1500 <span className="text-2xl font-medium text-pricing-muted">MAD</span>
           </div>
           <p className="text-pricing-muted mb-10">{t("priceSub")}</p>
-          <Button variant="pricing" size="xl">{t("ctaBuy")}</Button>
+          <Link to="/checkout"><Button variant="pricing" size="xl">{t("ctaBuy")}</Button></Link>
           <div className="mt-10 flex flex-wrap justify-center gap-8 text-pricing-muted">
             <span className="text-sm">{t("paymentLabel")}</span>
             <span className="font-bold">CMI</span>
@@ -196,7 +197,7 @@ function FinalCTA() {
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-4 text-foreground">{t("finalCtaTitle")}</h2>
         <p className="text-muted-foreground mb-10">{t("finalCtaSub")}</p>
-        <Button variant="hero" size="xl">{t("finalCtaBtn")}</Button>
+        <Link to="/checkout"><Button variant="hero" size="xl">{t("finalCtaBtn")}</Button></Link>
       </div>
     </section>
   );
