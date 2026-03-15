@@ -16,7 +16,7 @@ function HeroSection() {
           {t("heroSub")}
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button variant="hero" size="lg">{t("ctaJoin")}</Button>
+          <Link to="/checkout"><Button variant="hero" size="lg">{t("ctaJoin")}</Button></Link>
           <a
             href="https://wa.me/212600000000"
             target="_blank"
