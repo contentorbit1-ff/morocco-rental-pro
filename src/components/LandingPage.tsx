@@ -1,6 +1,7 @@
 import { useLang } from "@/lib/LangContext";
 import { Button } from "@/components/ui/button";
 import { Home, Clock, TrendingUp, CheckCircle2, MessageCircle, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/morocco-hero.jpg";
 
 function HeroSection() {
