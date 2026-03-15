@@ -15,7 +15,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-        <Link to="/" className="text-2xl font-bold tracking-tighter text-foreground">OPTIMAROC
+        <Link to="/" className="text-2xl font-bold tracking-tighter text-primary">OPTISTAY
           <span className="text-primary">MAROC</span>
         </Link>
 
