@@ -2,6 +2,8 @@ import { useLang } from "@/lib/LangContext";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Lang } from "@/lib/i18n";
+import { Moon, Sun } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export function Header() {
   const { lang, setLang, t } = useLang();
