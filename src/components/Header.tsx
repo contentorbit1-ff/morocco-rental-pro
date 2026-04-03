@@ -53,6 +53,7 @@ export function Header() {
               {l.label}
             </button>
           )}
+          </div>
         </div>
       </nav>
     </header>);
