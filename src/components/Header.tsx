@@ -7,6 +7,11 @@ import { useEffect, useState } from "react";
 
 export function Header() {
   const { lang, setLang, t } = useLang();
+  const [dark, setDark] = useState(() => document.documentElement.classList.contains("dark"));
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", dark);
+  }, [dark]);
 
   const langs: {code: Lang;label: string;}[] = [
   { code: "ar", label: "العربية" },
