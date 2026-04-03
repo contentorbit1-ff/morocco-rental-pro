@@ -33,7 +33,15 @@ export function Header() {
           <Link to="/contact" className="hover:text-foreground transition-custom">{t("navContact")}</Link>
         </div>
 
-        <div className="flex items-center gap-1 bg-secondary p-1 rounded-lg border border-border">
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setDark(!dark)}
+            className="p-2 rounded-lg border border-border bg-secondary text-muted-foreground hover:text-foreground transition-custom"
+            aria-label="Toggle dark mode"
+          >
+            {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+          </button>
+          <div className="flex items-center gap-1 bg-secondary p-1 rounded-lg border border-border">
           {langs.map((l) =>
           <button
             key={l.code}
