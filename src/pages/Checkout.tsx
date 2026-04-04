@@ -106,7 +106,7 @@ export default function CheckoutPage() {
           <div className="text-center border-t border-border pt-8">
             <p className="text-sm text-muted-foreground mb-4">{t("checkoutHelp")}</p>
             <a
-              href={`https://wa.me/212600000000?text=${waMsg}`}
+              href={`https://wa.me/212615101156?text=${waMsg}`}
               target="_blank"
               rel="noopener noreferrer"
             >
