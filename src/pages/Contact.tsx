@@ -68,7 +68,7 @@ export default function ContactPage() {
 
           <div className="mt-10 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
             <a
-              href="https://wa.me/212600000000"
+              href="https://wa.me/212615101156"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary font-bold flex items-center gap-2 hover:opacity-80 transition-custom"

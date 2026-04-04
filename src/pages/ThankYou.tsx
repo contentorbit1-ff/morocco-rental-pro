@@ -23,7 +23,7 @@ export default function ThankYouPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-            <a href="https://wa.me/212600000000" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/212615101156" target="_blank" rel="noopener noreferrer">
               <Button variant="default" size="lg" className="gap-2">
                 <MessageCircle className="w-5 h-5" />
                 {t("whatsappBtn")}
