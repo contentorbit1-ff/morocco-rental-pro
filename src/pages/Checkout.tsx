@@ -105,16 +105,15 @@ export default function CheckoutPage() {
           {/* WhatsApp help */}
           <div className="text-center border-t border-border pt-8">
             <p className="text-sm text-muted-foreground mb-4">{t("checkoutHelp")}</p>
-            <a
-              href={`https://wa.me/212615101156?text=${waMsg}`}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Button
+              variant="outline"
+              size="default"
+              className="gap-2"
+              onClick={() => window.open(`https://wa.me/212615101156?text=${waMsg}`, "_blank", "noopener,noreferrer")}
             >
-              <Button variant="outline" size="default" className="gap-2">
-                <MessageCircle className="w-5 h-5" />
-                WhatsApp
-              </Button>
-            </a>
+              <MessageCircle className="w-5 h-5" />
+              WhatsApp
+            </Button>
           </div>
         </div>
       </main>

@@ -67,15 +67,13 @@ export default function ContactPage() {
           </form>
 
           <div className="mt-10 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
-            <a
-              href="https://wa.me/212615101156"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary font-bold flex items-center gap-2 hover:opacity-80 transition-custom"
+            <button
+              onClick={() => window.open(`https://wa.me/212615101156?text=${encodeURIComponent("Hello, I'm interested in your service")}`, "_blank", "noopener,noreferrer")}
+              className="text-primary font-bold flex items-center gap-2 hover:opacity-80 transition-custom cursor-pointer"
             >
               <MessageCircle className="w-5 h-5" />
               WhatsApp Direct
-            </a>
+            </button>
             <span className="text-muted-foreground text-sm">support@bnbmaroc.ma</span>
           </div>
         </div>
