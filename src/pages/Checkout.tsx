@@ -78,7 +78,7 @@ export default function CheckoutPage() {
             <div className="pt-4">
               <p className="text-sm font-semibold text-foreground mb-3">{t("checkoutPaymentTitle")}</p>
               <div className="flex gap-3">
-                {["CMI", "PayPal", "Stripe"].map((m) => (
+                {["CIH Bank", "Attijari Wafa Bank", "PayPal"].map((m) => (
                   <div
                     key={m}
                     className="flex-1 flex items-center justify-center gap-2 p-3 rounded-xl border border-border bg-background shadow-layered text-sm font-bold text-foreground"
