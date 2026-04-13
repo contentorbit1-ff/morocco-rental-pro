@@ -160,9 +160,9 @@ function PricingSection() {
           <Link to="/checkout"><Button variant="pricing" size="xl">{t("ctaBuy")}</Button></Link>
           <div className="mt-10 flex flex-wrap justify-center gap-8 text-pricing-muted">
             <span className="text-sm">{t("paymentLabel")}</span>
-            <span className="font-bold">CMI</span>
+            <span className="font-bold">CIH Bank</span>
+            <span className="font-bold">Attijari Wafa Bank</span>
             <span className="font-bold">PayPal</span>
-            <span className="font-bold">STRIPE</span>
           </div>
         </div>
       </div>
