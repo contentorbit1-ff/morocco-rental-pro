@@ -8,9 +8,9 @@ import { Label } from "@/components/ui/label";
 import { MessageCircle, ShieldCheck, CreditCard, CheckCircle2 } from "lucide-react";
 
 const WHATSAPP_MESSAGES = {
-  fr: "Bonjour, je suis intéressé par la formation Airbnb à 1500 MAD. Pouvez-vous m'expliquer comment m'inscrire ?",
-  en: "Hello, I'm interested in the Airbnb course for 1500 MAD. Can you explain how I can enroll?",
-  ar: "مرحباً، أنا مهتم بدورة Airbnb بسعر 1500 درهم. هل يمكنكم شرح كيفية التسجيل؟",
+  fr: "Bonjour, je suis intéressé par la formation Airbnb à 750 MAD. Pouvez-vous m'expliquer comment m'inscrire ?",
+  en: "Hello, I'm interested in the Airbnb course for 750 MAD. Can you explain how I can enroll?",
+  ar: "مرحباً، أنا مهتم بدورة Airbnb بسعر 750 درهم. هل يمكنكم شرح كيفية التسجيل؟",
 };
 
 export default function CheckoutPage() {
@@ -35,7 +35,7 @@ export default function CheckoutPage() {
             <h1 className="text-2xl font-bold text-foreground mb-2">{t("checkoutTitle")}</h1>
             <p className="text-muted-foreground text-sm mb-4">{t("checkoutDesc")}</p>
             <div className="flex items-baseline gap-2">
-              <span className="text-4xl font-bold text-primary">1500</span>
+              <span className="text-4xl font-bold text-primary">750</span>
               <span className="text-lg text-muted-foreground font-medium">MAD</span>
             </div>
           </div>

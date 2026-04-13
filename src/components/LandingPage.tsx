@@ -154,7 +154,7 @@ function PricingSection() {
         <div className="max-w-4xl mx-auto px-6 py-20 text-center">
           <h2 className="text-3xl font-bold mb-4">{t("priceTitle")}</h2>
           <div className="text-6xl font-bold mb-4">
-            1500 <span className="text-2xl font-medium text-pricing-muted">MAD</span>
+            750 <span className="text-2xl font-medium text-pricing-muted">MAD</span>
           </div>
           <p className="text-pricing-muted mb-10">{t("priceSub")}</p>
           <Link to="/checkout"><Button variant="pricing" size="xl">{t("ctaBuy")}</Button></Link>
