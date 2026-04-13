@@ -23,12 +23,15 @@ export default function ThankYouPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-            <a href="https://wa.me/212615101156" target="_blank" rel="noopener noreferrer">
-              <Button variant="default" size="lg" className="gap-2">
-                <MessageCircle className="w-5 h-5" />
-                {t("whatsappBtn")}
-              </Button>
-            </a>
+            <Button
+              variant="default"
+              size="lg"
+              className="gap-2"
+              onClick={() => window.open(`https://wa.me/212615101156?text=${encodeURIComponent("Hello, I'm interested in your service")}`, "_blank", "noopener,noreferrer")}
+            >
+              <MessageCircle className="w-5 h-5" />
+              {t("whatsappBtn")}
+            </Button>
             <Link to="/">
               <Button variant="outline" size="lg">{t("thankBack")}</Button>
             </Link>

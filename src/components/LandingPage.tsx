@@ -17,16 +17,15 @@ function HeroSection() {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link to="/checkout"><Button variant="hero" size="lg">{t("ctaJoin")}</Button></Link>
-          <a
-            href="https://wa.me/212615101156"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Button
+            variant="heroOutline"
+            size="lg"
+            className="gap-2"
+            onClick={() => window.open(`https://wa.me/212615101156?text=${encodeURIComponent("Hello, I'm interested in your service")}`, "_blank", "noopener,noreferrer")}
           >
-            <Button variant="heroOutline" size="lg" className="gap-2">
-              <MessageCircle className="w-5 h-5" />
-              WhatsApp
-            </Button>
-          </a>
+            <MessageCircle className="w-5 h-5" />
+            WhatsApp
+          </Button>
         </div>
       </div>
     </section>
@@ -179,12 +178,15 @@ function WhatsAppSection() {
         <MessageCircle className="w-12 h-12 text-primary mx-auto mb-4" />
         <h2 className="text-2xl font-bold mb-3 text-foreground">{t("whatsappTitle")}</h2>
         <p className="text-muted-foreground mb-8">{t("whatsappText")}</p>
-        <a href="https://wa.me/212615101156" target="_blank" rel="noopener noreferrer">
-          <Button variant="default" size="lg" className="gap-2">
-            <MessageCircle className="w-5 h-5" />
-            {t("whatsappBtn")}
-          </Button>
-        </a>
+        <Button
+          variant="default"
+          size="lg"
+          className="gap-2"
+          onClick={() => window.open(`https://wa.me/212615101156?text=${encodeURIComponent("Hello, I'm interested in your service")}`, "_blank", "noopener,noreferrer")}
+        >
+          <MessageCircle className="w-5 h-5" />
+          {t("whatsappBtn")}
+        </Button>
       </div>
     </section>
   );
