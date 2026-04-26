@@ -27,6 +27,7 @@ const App = () => (
             <Route path="/thank-you" element={<ThankYou />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <FloatingWhatsAppButton />
         </BrowserRouter>
       </LangProvider>
     </TooltipProvider>
