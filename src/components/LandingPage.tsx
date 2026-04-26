@@ -4,28 +4,43 @@ import { Home, Clock, TrendingUp, CheckCircle2, MessageCircle, Star } from "luci
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/morocco-hero.jpg";
 
+const WA_NUMBER = "212615101156";
+const WA_MESSAGE = "Salam, bghit nstafser ala l-formation dial Airbnb";
+const WA_URL = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`;
+
+function WhatsAppCTA({ className = "", size = "lg" }: { className?: string; size?: "lg" | "xl" }) {
+  return (
+    <a
+      href={WA_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold shadow-lg transition-colors ${
+        size === "xl" ? "px-8 py-4 text-base" : "px-6 py-3 text-sm sm:text-base"
+      } ${className}`}
+      aria-label="Contact on WhatsApp"
+    >
+      <MessageCircle className="w-5 h-5 fill-white" />
+      <span>WhatsApp</span>
+    </a>
+  );
+}
+
 function HeroSection() {
   const { t } = useLang();
   return (
-    <section className="py-20 md:py-28 px-6">
+    <section className="py-12 sm:py-20 md:py-28 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto text-center">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-foreground leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight mb-4 sm:mb-6 text-foreground leading-tight">
           {t("heroTitle")}
         </h1>
-        <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
           {t("heroSub")}
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link to="/checkout"><Button variant="hero" size="lg">{t("ctaJoin")}</Button></Link>
-          <Button
-            variant="heroOutline"
-            size="lg"
-            className="gap-2"
-            onClick={() => window.open(`https://wa.me/212615101156?text=${encodeURIComponent("Hello, I'm interested in your service")}`, "_blank", "noopener,noreferrer")}
-          >
-            <MessageCircle className="w-5 h-5" />
-            WhatsApp
-          </Button>
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
+          <Link to="/checkout" className="w-full sm:w-auto">
+            <Button variant="hero" size="lg" className="w-full sm:w-auto">{t("ctaJoin")}</Button>
+          </Link>
+          <WhatsAppCTA className="w-full sm:w-auto" />
         </div>
       </div>
     </section>
@@ -35,12 +50,12 @@ function HeroSection() {
 function OpportunitySection() {
   const { t } = useLang();
   return (
-    <section className="py-20 bg-secondary">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+    <section className="py-14 sm:py-20 bg-secondary">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div>
-            <h2 className="text-3xl font-bold mb-6 text-foreground">{t("oppTitle")}</h2>
-            <p className="text-muted-foreground mb-8 leading-relaxed">{t("oppText")}</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-foreground">{t("oppTitle")}</h2>
+            <p className="text-muted-foreground mb-6 sm:mb-8 leading-relaxed">{t("oppText")}</p>
             <div className="grid grid-cols-2 gap-4">
               <div className="p-5 bg-background rounded-xl shadow-layered">
                 <div className="text-2xl font-bold text-primary">10M+</div>
@@ -52,7 +67,7 @@ function OpportunitySection() {
               </div>
             </div>
           </div>
-          <div className="relative aspect-video bg-muted rounded-2xl overflow-hidden shadow-elevated">
+          <div className="relative aspect-video w-full max-w-full bg-muted rounded-2xl overflow-hidden shadow-elevated">
             <img src={heroImage} alt="Morocco Tourism" className="object-cover w-full h-full" loading="lazy" />
           </div>
         </div>
@@ -69,16 +84,16 @@ function LearnSection() {
     { icon: TrendingUp, titleKey: "learn3Title" as const, descKey: "learn3Desc" as const },
   ];
   return (
-    <section className="py-20 px-6">
+    <section className="py-14 sm:py-20 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-center text-foreground">{t("learnTitle")}</h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center text-foreground">{t("learnTitle")}</h2>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {cards.map((c) => (
-            <div key={c.titleKey} className="p-8 rounded-2xl bg-background shadow-layered border border-border/50 hover-lift transition-custom">
+            <div key={c.titleKey} className="p-6 sm:p-8 rounded-2xl bg-background shadow-layered border border-border/50 hover-lift transition-custom">
               <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center text-accent-foreground mb-6">
                 <c.icon className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-foreground">{t(c.titleKey)}</h3>
+              <h3 className="text-lg sm:text-xl font-bold mb-3 text-foreground">{t(c.titleKey)}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{t(c.descKey)}</p>
             </div>
           ))}
@@ -92,14 +107,14 @@ function ProgramSection() {
   const { t } = useLang();
   const modules = ["mod1", "mod2", "mod3", "mod4", "mod5", "mod6", "mod7", "mod8"] as const;
   return (
-    <section id="programme" className="py-20 bg-secondary px-6">
+    <section id="programme" className="py-14 sm:py-20 bg-secondary px-4 sm:px-6">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold mb-10 text-center text-foreground">{t("programTitle")}</h2>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-10 text-center text-foreground">{t("programTitle")}</h2>
         <div className="space-y-3">
           {modules.map((m, i) => (
-            <div key={m} className="flex items-start gap-4 p-5 bg-background rounded-xl shadow-layered">
+            <div key={m} className="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 bg-background rounded-xl shadow-layered">
               <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-              <span className="text-foreground font-medium">{t(m)}</span>
+              <span className="text-foreground font-medium text-sm sm:text-base">{t(m)}</span>
             </div>
           ))}
         </div>
@@ -116,12 +131,12 @@ function TestimonialsSection() {
     { name: "t3Name" as const, city: "t3City" as const, text: "t3Text" as const },
   ];
   return (
-    <section className="py-20 px-6">
+    <section className="py-14 sm:py-20 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-center text-foreground">{t("testimonialsTitle")}</h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center text-foreground">{t("testimonialsTitle")}</h2>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {testimonials.map((tm) => (
-            <div key={tm.name} className="p-8 rounded-2xl bg-background shadow-layered border border-border/50">
+            <div key={tm.name} className="p-6 sm:p-8 rounded-2xl bg-background shadow-layered border border-border/50">
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-primary text-primary" />
@@ -149,20 +164,20 @@ function TestimonialsSection() {
 function PricingSection() {
   const { t } = useLang();
   return (
-    <section className="py-20 px-6">
+    <section className="py-14 sm:py-20 px-4 sm:px-6">
       <div className="bg-pricing text-pricing-foreground rounded-3xl max-w-6xl mx-auto overflow-hidden">
-        <div className="max-w-4xl mx-auto px-6 py-20 text-center">
-          <h2 className="text-3xl font-bold mb-4">{t("priceTitle")}</h2>
-          <div className="text-6xl font-bold mb-4">
-            750 <span className="text-2xl font-medium text-pricing-muted">MAD</span>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">{t("priceTitle")}</h2>
+          <div className="text-5xl sm:text-6xl font-bold mb-4">
+            750 <span className="text-xl sm:text-2xl font-medium text-pricing-muted">MAD</span>
           </div>
-          <p className="text-pricing-muted mb-10">{t("priceSub")}</p>
+          <p className="text-pricing-muted mb-8 sm:mb-10 text-sm sm:text-base">{t("priceSub")}</p>
           <Link to="/checkout"><Button variant="pricing" size="xl">{t("ctaBuy")}</Button></Link>
-          <div className="mt-10 flex flex-wrap justify-center gap-8 text-pricing-muted">
+          <div className="mt-8 sm:mt-10 flex flex-wrap justify-center gap-4 sm:gap-8 text-pricing-muted">
             <span className="text-sm">{t("paymentLabel")}</span>
-            <span className="font-bold">CIH Bank</span>
-            <span className="font-bold">Attijari Wafa Bank</span>
-            <span className="font-bold">PayPal</span>
+            <span className="font-bold text-sm sm:text-base">CIH Bank</span>
+            <span className="font-bold text-sm sm:text-base">Attijari Wafa Bank</span>
+            <span className="font-bold text-sm sm:text-base">PayPal</span>
           </div>
         </div>
       </div>
@@ -173,20 +188,12 @@ function PricingSection() {
 function WhatsAppSection() {
   const { t } = useLang();
   return (
-    <section className="py-16 px-6">
+    <section className="py-12 sm:py-16 px-4 sm:px-6">
       <div className="max-w-2xl mx-auto text-center">
         <MessageCircle className="w-12 h-12 text-primary mx-auto mb-4" />
-        <h2 className="text-2xl font-bold mb-3 text-foreground">{t("whatsappTitle")}</h2>
-        <p className="text-muted-foreground mb-8">{t("whatsappText")}</p>
-        <Button
-          variant="default"
-          size="lg"
-          className="gap-2"
-          onClick={() => window.open(`https://wa.me/212615101156?text=${encodeURIComponent("Hello, I'm interested in your service")}`, "_blank", "noopener,noreferrer")}
-        >
-          <MessageCircle className="w-5 h-5" />
-          {t("whatsappBtn")}
-        </Button>
+        <h2 className="text-xl sm:text-2xl font-bold mb-3 text-foreground">{t("whatsappTitle")}</h2>
+        <p className="text-muted-foreground mb-6 sm:mb-8 text-sm sm:text-base">{t("whatsappText")}</p>
+        <WhatsAppCTA size="xl" />
       </div>
     </section>
   );
@@ -195,10 +202,10 @@ function WhatsAppSection() {
 function FinalCTA() {
   const { t } = useLang();
   return (
-    <section className="py-20 bg-secondary px-6">
+    <section className="py-14 sm:py-20 bg-secondary px-4 sm:px-6">
       <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-4 text-foreground">{t("finalCtaTitle")}</h2>
-        <p className="text-muted-foreground mb-10">{t("finalCtaSub")}</p>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">{t("finalCtaTitle")}</h2>
+        <p className="text-muted-foreground mb-8 sm:mb-10 text-sm sm:text-base">{t("finalCtaSub")}</p>
         <Link to="/checkout"><Button variant="hero" size="xl">{t("finalCtaBtn")}</Button></Link>
       </div>
     </section>
@@ -208,7 +215,10 @@ function FinalCTA() {
 function Footer() {
   const { t } = useLang();
   return (
-    <footer className="py-10 border-t border-border text-center text-muted-foreground text-sm">
+    <footer className="py-10 px-4 sm:px-6 border-t border-border text-center text-muted-foreground text-sm">
+      <div className="flex justify-center mb-6">
+        <WhatsAppCTA size="lg" />
+      </div>
       <p>{t("footer")}</p>
     </footer>
   );

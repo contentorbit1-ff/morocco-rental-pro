@@ -4,7 +4,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LangProvider } from "@/lib/LangContext";
-import { FloatingWhatsAppButton } from "@/components/FloatingWhatsAppButton";
 import Index from "./pages/Index.tsx";
 import Contact from "./pages/Contact.tsx";
 import Checkout from "./pages/Checkout.tsx";
@@ -27,7 +26,6 @@ const App = () => (
             <Route path="/thank-you" element={<ThankYou />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-          <FloatingWhatsAppButton />
         </BrowserRouter>
       </LangProvider>
     </TooltipProvider>
